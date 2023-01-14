@@ -43,6 +43,12 @@ operationBtns.forEach(operationBtn => operationBtn.addEventListener('click', (e)
         let answer = calculate();
         console.log(answer);
         updateMainDisplay(answer);
+        if (answer ==='Hah No!') {
+            prevNum = ""
+            currentNum = ""
+            symbol = ""
+            return;
+        }
         prevNum = answer;
     }
     // do nothing if value at prev num, next value will be added and it will calculate
@@ -54,7 +60,7 @@ operationBtns.forEach(operationBtn => operationBtn.addEventListener('click', (e)
         prevNum = currentNum;
     }
     //if no values yet, allow user to use - as negative
-    if (currentNum === '' && operationBtn.textContent){
+    if (currentNum === '' && operationBtn.textContent == '-'){
         currentNum += '-';
         console.log(currentNum);
         updateMainDisplay('-');
