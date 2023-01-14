@@ -2,11 +2,31 @@
 
 
 
-// the maths
 
 let prevNum = ""
 let currentNum = ""
 let symbol = ""
+
+// clear button
+const clearBtn = document.querySelector("#clearBtn")
+clearBtn.addEventListener('click', (e) => {
+    clearAll();
+})
+
+// delete button
+const deleteBtn = document.querySelector('#deleteBtn')
+deleteBtn.addEventListener('click', (e) => {
+    currentNum = currentNum.slice(0,-1);
+    updateMainDisplay(currentNum);
+})
+
+function clearAll() {
+    prevNum = '';
+    currentNum = '';
+    symbol = '';
+    updateMainDisplay('0');
+    updateUpperDisplay();
+}
 
 // number buttons
 const numbers = document.querySelectorAll(".numbers")
