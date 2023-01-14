@@ -91,6 +91,9 @@ function calculate() {
         result = multiply(prevNum, currentNum)
     }
     else if (symbol === '/'){
+        if (currentNum === '0') {
+            return 'Hah No!';
+        }
         result = divide(prevNum, currentNum)
     }
     return Math.round(result * 100000) / 100000;
