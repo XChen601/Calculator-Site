@@ -60,7 +60,7 @@ operationBtns.forEach(operationBtn => operationBtn.addEventListener('click', (e)
         prevNum = currentNum;
     }
     //if no values yet, allow user to use - as negative
-    if (currentNum === '' && operationBtn.textContent == '-'){
+    if (prevNum === '' && currentNum === '' && operationBtn.textContent == '-'){
         currentNum += '-';
         console.log(currentNum);
         updateMainDisplay('-');
